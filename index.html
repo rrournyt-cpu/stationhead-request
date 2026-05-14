@@ -400,10 +400,10 @@
         </div>
     </div>
 
-        <!-- ────────── STEP 5（例文 2つ仕様） ────────── -->
+    <!-- ────────── STEP 5（長文対応：枠が自動で縦にどこまでも広がる仕様） ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 5</div>
-        <div class="step-title">チャンネル開設理由を入力する</div>
+        <div class="step-title">項目5：システム連携キー（例文選択）</div>
         
         <div class="image-box">
             <img src="step5.png" alt="手順5" class="flow-image">
@@ -417,7 +417,8 @@
         <div class="copy-item">
             <span class="copy-label">パターンＡ</span>
             <div class="input-row">
-                <textarea class="input-text" id="t5_v1" readonly style="resize:none; height:auto;" rows="4">I’d love to request a custom channel for Roirom. Roirom has a growing and highly passionate fan community that actively supports releases through streaming, discussion, and shared listening experiences. Fans are already gathering and organizing streaming sessions informally, and having a dedicated Stationhead channel would help bring the community together in a more organized and welcoming way.
+                <!-- 💡「>」と「</textarea>」の間に、作ってもらった本番用の文章1を貼り付けてください -->
+                <textarea class="input-text textarea-auto" id="t5_v1" readonly style="resize:none; overflow-y:hidden; height:auto;" oninput="autoResize(this)">I’d love to request a custom channel for Roirom. Roirom has a growing and highly passionate fan community that actively supports releases through streaming, discussion, and shared listening experiences. Fans are already gathering and organizing streaming sessions informally, and having a dedicated Stationhead channel would help bring the community together in a more organized and welcoming way.
 
 A custom channel would give fans a central space to connect in real time, host listening parties, celebrate new releases, and continue building momentum around Roirom’s music. We truly believe there is strong potential for an active and positive community on the platform.</textarea>
                 <button class="copy-btn" onclick="copyText('t5_v1', this)">コピー</button>
@@ -428,7 +429,8 @@ A custom channel would give fans a central space to connect in real time, host l
         <div class="copy-item">
             <span class="copy-label">パターンＢ</span>
             <div class="input-row">
-                <textarea class="input-text" id="t5_v2" readonly style="resize:none; height:auto;" rows="4">I’d like to request a custom Stationhead channel for Roirom. A dedicated channel would provide an organized space for listeners and fans to engage with Roirom’s music through streaming events, live discussions, and community interaction.
+                <!-- 💡「>」と「</textarea>」の間に、作ってもらった本番用の文章2を貼り付けてください -->
+                <textarea class="input-text textarea-auto" id="t5_v2" readonly style="resize:none; overflow-y:hidden; height:auto;" oninput="autoResize(this)">I’d like to request a custom Stationhead channel for Roirom. A dedicated channel would provide an organized space for listeners and fans to engage with Roirom’s music through streaming events, live discussions, and community interaction.
 
 Roirom’s audience continues to grow, with increasing fan activity and achievements including reaching #1 on the ORICON Daily Chart. At the moment, there are also approximately 150 active fan accounts already participating and supporting streaming efforts, showing a strong and engaged community base.
 
@@ -437,6 +439,22 @@ Many listeners are looking for a central place to connect and support releases t
             </div>
         </div>
     </div>
+
+    <!-- 🔄 ページが開いた瞬間に、文章の長さに合わせて枠を自動で縦に広げるプログラム -->
+    <script>
+        function autoResize(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.querySelectorAll('.textarea-auto').forEach(function(textarea) {
+                    autoResize(textarea);
+                });
+            }, 300);
+        });
+    </script>
+
 
 
         <!-- ────────── STEP 6（画像2枚 ＆ 3連コピーボタン仕様） ────────── -->
