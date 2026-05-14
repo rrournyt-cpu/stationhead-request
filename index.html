@@ -118,7 +118,7 @@
         .input-row {
             display: flex;
             gap: 8px;
-            align-items: center; /* 🛠️ ボタンが縦に引き伸ばされるのを防ぐ設定に変更 */
+            align-items: center; 
         }
         .input-text {
             flex: 1;
@@ -168,7 +168,7 @@
             overflow: hidden;
             box-shadow: 0 3px 6px rgba(0,0,0,0.16);
             text-shadow: 0 1px 0 rgba(255,255,255,0.6);
-            height: 37px; /* 🛠️ ボタンの高さを37pxに完全固定 */
+            height: 37px; 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -206,12 +206,14 @@
             100% { left: 140%; }
         }
 
+        /* ✅ コピー完了時の緑色デザイン（文字幅を考慮して少し横長になっても崩れない設定） */
         .copy-btn.copied {
             background: #28a745 !important;
             color: #fff !important;
             border-color: #28a745 !important;
             text-shadow: none !important;
             box-shadow: none !important;
+            min-width: 76px; 
         }
         .copy-btn.copied::after {
             display: none;
@@ -237,7 +239,10 @@
         .sub-data-row .copy-btn {
             padding: 6px 14px;
             font-size: 13px;
-            height: 31px; /* 🛠️ アカウントリスト内のボタンの高さ */
+            height: 31px; 
+        }
+        .sub-data-row .copy-btn.copied {
+            min-width: 63px;
         }
     </style>
 </head>
@@ -332,7 +337,6 @@
             ⚠️ 以下の3つの例文のうち、いずれか1つをコピーして使用してください
         </p>
         
-        <!-- 例文1 -->
         <div class="copy-item">
             <span class="copy-label">例文 1</span>
             <div class="input-row">
@@ -340,8 +344,6 @@
                 <button class="copy-btn" onclick="copyText('t6_v1', this)">コピー</button>
             </div>
         </div>
-        
-        <!-- 例文2 -->
         <div class="copy-item">
             <span class="copy-label">例文 2</span>
             <div class="input-row">
@@ -349,8 +351,6 @@
                 <button class="copy-btn" onclick="copyText('t6_v2', this)">コピー</button>
             </div>
         </div>
-        
-        <!-- 例文3 -->
         <div class="copy-item">
             <span class="copy-label">例文 3</span>
             <div class="input-row">
@@ -420,7 +420,7 @@
         
         <div class="finish-comment-box">
             <span class="finish-label">💝 メッセージ</span>
-            <div class="finish-text">✨ 以上で申請手順はすべて完了です。<br>ご協力ありがとうございました！ ✨</div>
+            <div class="finish-text">✨ 以上で申請手順はすべて完了です。ご協力ありがとうございました！ ✨</div>
         </div>
     </div>
 
@@ -437,14 +437,16 @@
             document.execCommand("copy");
             document.body.removeChild(tempInput);
             
+            // 成功表示（「コピー済」に文字を変えて、緑化を維持）
             var originalText = button.innerText;
-            button.innerText = "OK";
+            button.innerText = "コピー済";
             button.classList.add("copied");
             
+            // 💡 タイマーを5000ミリ秒（5秒間）に長めに設定しました
             setTimeout(function() {
                 button.innerText = originalText;
                 button.classList.remove("copied");
-            }, 1200);
+            }, 5000);
         }
     </script>
 
