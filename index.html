@@ -15,7 +15,7 @@
             background-color: #f8f9fa;
         }
         
-        /* 👑 銀色を際立たせた金銀メタリックバナータイトル（光が走るエフェクト付き） */
+        /* 👑 金銀半々・青みシルバーのキラキラメタリックバナータイトル */
         h1 {
             font-size: 20px;
             font-weight: 800;
@@ -24,7 +24,7 @@
             padding: 15px 10px;
             letter-spacing: 1.5px;
             border-radius: 12px;
-            border: 1px solid #b3b3b3; 
+            border: 1px solid #a5b8c6; /* 枠線も青みシルバーに調和 */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             
             color: #2b2510;
@@ -32,24 +32,23 @@
             -webkit-text-fill-color: initial;
             text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
             
+            /* 👑 金と「青み銀」を50:50でブレンドした高コントラストグラデーション */
             background: linear-gradient(135deg, 
-                #ccae3d 0%,   
-                #e8d382 15%,  
-                #d6d6d6 30%,  
-                #fcfcfc 45%,  
-                #ffffff 55%,  
-                #bebebe 70%,  
-                #e8d382 85%,  
-                #ccae3d 100%  
+                #ccae3d 0%,    /* 金 */
+                #e8d382 25%,   /* 薄金 */
+                #bdcfe0 30%,   /* 🌟青みを含んだ明るい銀（白の代わりに配置） */
+                #8faec6 50%,   /* 🌟くっきり主張するリッチな青みシルバー */
+                #bdcfe0 70%,   /* 🌟青みを含んだ明るい銀 */
+                #e8d382 75%,   /* 薄金 */
+                #ccae3d 100%   /* 金 */
             );
             background-size: 200% auto;
             
-            /* ✨ 光を走らせるための設定 */
             position: relative;
             overflow: hidden;
         }
 
-        /* ✨ タイトル枠内を光が走り抜けるエフェクト（ボタンとお揃い） */
+        /* ✨ タイトル枠内を光が走り抜けるエフェクト */
         h1::after {
             content: '';
             position: absolute;
@@ -153,13 +152,13 @@
             font-weight: bold;
         }
 
-        /* 👑 銀色の輝きをさらに強めたキラキラメタリックボタン */
+        /* 👑 金銀半々・青みシルバーのキラキラメタリックボタン（タイトルとお揃い） */
         .copy-btn {
             padding: 8px 20px;
             font-size: 14px;
             font-weight: bold;
             color: #2b2510; 
-            border: 1px solid #b3b3b3; 
+            border: 1px solid #a5b8c6; 
             border-radius: 6px;
             cursor: pointer;
             white-space: nowrap;
@@ -168,14 +167,14 @@
             box-shadow: 0 3px 6px rgba(0,0,0,0.16);
             text-shadow: 0 1px 0 rgba(255,255,255,0.6);
             
+            /* 🥈 タイトルと完全に同期した金銀ハーフ配合 */
             background: linear-gradient(135deg, 
                 #ccae3d 0%,   
                 #e8d382 15%,  
-                #d6d6d6 30%,  
-                #fcfcfc 45%,  
-                #ffffff 55%,  
-                #bebebe 70%,  
-                #e8d382 85%,  
+                #bdcfe0 30%,   
+                #8faec6 50%,   
+                #bdcfe0 70%,   
+                #e8d382 85%,   
                 #ccae3d 100%  
             );
             background-size: 200% auto;
@@ -194,7 +193,7 @@
             animation: shine-effect 3s infinite linear;
         }
 
-        /* 🔄 アニメーションの共通定義 */
+        /* 🔄 アニメーションの定義 */
         @keyframes shine-effect {
             0% { left: -60%; }
             30% { left: 140%; }
@@ -237,7 +236,7 @@
 </head>
 <body>
 
-    <!-- 👑 光が走り抜ける金銀メタリックバナータイトル -->
+    <!-- 👑 青みシルバーが際立つメタリックバナータイトル -->
     <h1>✨ 一斉申請マニュアル ✨</h1>
 
     <!-- ────────── STEP 1 ────────── -->
