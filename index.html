@@ -156,8 +156,8 @@
 
         /* 👑 明るい白銀＆ゴールドのキラキラメタリックボタン */
         .copy-btn {
-            padding: 8px 0; /* 🛠️ 左右の余白を0にして横幅をwidthで完全固定 */
-            width: 90px;    /* 🛠️ ボタンの横幅を90pxに完全固定 */
+            padding: 8px 0; 
+            width: 90px;    
             font-size: 14px;
             font-weight: bold;
             color: #2b2510; 
@@ -173,7 +173,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-sizing: border-box; /* サイズ計算を狂わせない設定 */
+            box-sizing: border-box; 
             
             background: linear-gradient(135deg, 
                 #d9c382 0%,   
@@ -201,24 +201,28 @@
             animation: shine-effect 3s infinite linear;
         }
 
-        /* 🔄 アニメーションの定義 */
         @keyframes shine-effect {
             0% { left: -60%; }
             30% { left: 140%; }
             100% { left: 140%; }
         }
 
-        /* ✅ コピー完了時の緑色デザイン（元のボタンと全く同じサイズ・位置をキープ） */
+        /* ✅ コピー直後（10秒間）：鮮やかなグリーンに変化 */
         .copy-btn.copied {
             background: #28a745 !important;
             color: #fff !important;
             border-color: #28a745 !important;
             text-shadow: none !important;
             box-shadow: none !important;
-            width: 90px !important; /* 🛠️ コピー完了時も横幅を90pxに完全固定 */
+            width: 90px !important; 
         }
         .copy-btn.copied::after {
             display: none;
+        }
+
+        /* 💾 10秒経過後：金銀のキラキラに戻るが、文字だけ「コピー済」を綺麗に維持する設定 */
+        .copy-btn.history-done {
+            font-size: 12px; /* 文字がはみ出さないよう1サイズ小さく調整 */
         }
 
         .sub-data-list {
@@ -239,20 +243,22 @@
             color: #333;
         }
         
-        /* 🛠️ STEP 8 リスト内専用のボタン固定サイズ設定 */
         .sub-data-row .copy-btn {
-            width: 78px; /* アカウントリスト内は少しスマートな78pxに固定 */
+            width: 78px; 
             font-size: 13px;
             height: 31px; 
         }
         .sub-data-row .copy-btn.copied {
-            width: 78px !important; /* 緑色になっても78pxのまま固定 */
+            width: 78px !important; 
+        }
+        .sub-data-row .copy-btn.history-done {
+            width: 78px !important;
+            font-size: 11px; /* リスト内も文字サイズを自動最適化 */
         }
     </style>
 </head>
 <body>
 
-    <!-- 👑 薄金と白銀のメタリックバナータイトル -->
     <h1>✨ 一斉申請マニュアル ✨</h1>
 
     <!-- ────────── STEP 1 ────────── -->
@@ -424,7 +430,7 @@
         
         <div class="finish-comment-box">
             <span class="finish-label">💝 メッセージ</span>
-            <div class="finish-text">✨ 以上で申請手順はすべて完了です。ご協力ありがとうございました！ ✨</div>
+            <div class="finish-text">✨ 以上で申請手順はすべて完了です。<br>ご協力ありがとうございました！ ✨</div>
         </div>
     </div>
 
@@ -441,15 +447,18 @@
             document.execCommand("copy");
             document.body.removeChild(tempInput);
             
-            // 成功表示（サイズは固定されたまま、「コピー済」に切り替わります）
-            var originalText = button.innerText;
+            // 1. ボタンを押した直後は、緑の背景に白文字で「コピー済」
             button.innerText = "コピー済";
             button.classList.add("copied");
+            button.classList.remove("history-done"); // 念のため過去履歴クラスを外す
             
-            // 💡 タイマーを10000ミリ秒（10秒間）に設定しました
+            // 💡 10秒（10000ミリ秒）後に実行する処理
             setTimeout(function() {
-                button.innerText = originalText;
+                // 緑の背景（copiedクラス）だけを解除し、金銀に戻す
                 button.classList.remove("copied");
+                // 文字サイズ調整用のクラスを追加し、文字は「コピー済」のまま残す
+                button.classList.add("history-done");
+                button.innerText = "コピー済";
             }, 10000);
         }
     </script>
