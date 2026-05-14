@@ -15,7 +15,7 @@
             background-color: #f8f9fa;
         }
         
-        /* 👑 金色を極限まで薄くし、白銀を引き立てたプラチナメタリックバナータイトル */
+        /* 👑 薄金と白銀のメタリックバナータイトル */
         h1 {
             font-size: 20px;
             font-weight: 800;
@@ -48,7 +48,6 @@
             overflow: hidden;
         }
 
-        /* ✨ タイトル枠内を光が走り抜けるエフェクト */
         h1::after {
             content: '';
             position: absolute;
@@ -59,6 +58,19 @@
             background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
             transform: rotate(30deg);
             animation: shine-effect 3s infinite linear;
+        }
+
+        /* 📝 導入メッセージのスタイル */
+        .intro-box {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #495057;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            text-align: center;
         }
 
         .step-card {
@@ -156,8 +168,8 @@
 
         /* 👑 明るい白銀＆ゴールドのキラキラメタリックボタン */
         .copy-btn {
-            padding: 8px 0; /* 🛠️ 左右の余白を0にして横幅をwidthで完全固定 */
-            width: 90px;    /* 🛠️ ボタンの横幅を90pxに完全固定 */
+            padding: 8px 0; 
+            width: 90px;    
             font-size: 14px;
             font-weight: bold;
             color: #2b2510; 
@@ -173,7 +185,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-sizing: border-box; /* サイズ計算を狂わせない設定 */
+            box-sizing: border-box; 
             
             background: linear-gradient(135deg, 
                 #d9c382 0%,   
@@ -188,7 +200,6 @@
             background-size: 200% auto;
         }
 
-        /* ✨ ボタン内を光が走り抜けるエフェクト */
         .copy-btn::after {
             content: '';
             position: absolute;
@@ -201,24 +212,28 @@
             animation: shine-effect 3s infinite linear;
         }
 
-        /* 🔄 アニメーションの定義 */
         @keyframes shine-effect {
             0% { left: -60%; }
             30% { left: 140%; }
             100% { left: 140%; }
         }
 
-        /* ✅ コピー完了時の緑色デザイン（元のボタンと全く同じサイズ・位置をキープ） */
+        /* ✅ コピー直後（10秒間）：鮮やかなグリーンに変化 */
         .copy-btn.copied {
             background: #28a745 !important;
             color: #fff !important;
             border-color: #28a745 !important;
             text-shadow: none !important;
             box-shadow: none !important;
-            width: 90px !important; /* 🛠️ コピー完了時も横幅を90pxに完全固定 */
+            width: 90px !important; 
         }
         .copy-btn.copied::after {
             display: none;
+        }
+
+        /* 💾 10秒経過後：文字が「✅ コピー」になった時の専用スタイル調整 */
+        .copy-btn.history-done {
+            font-size: 12px; /* ✅マークが入ってもはみ出さないよう微調整 */
         }
 
         .sub-data-list {
@@ -239,14 +254,26 @@
             color: #333;
         }
         
-        /* 🛠️ STEP 8 リスト内専用のボタン固定サイズ設定 */
         .sub-data-row .copy-btn {
-            width: 78px; /* アカウントリスト内は少しスマートな78pxに固定 */
+            width: 78px; 
             font-size: 13px;
             height: 31px; 
         }
         .sub-data-row .copy-btn.copied {
-            width: 78px !important; /* 緑色になっても78pxのまま固定 */
+            width: 78px !important; 
+        }
+        .sub-data-row .copy-btn.history-done {
+            width: 78px !important;
+            font-size: 11px; 
+        }
+
+        /* 👤 作成者欄のスタイル */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 11px;
+            color: #868e96;
         }
     </style>
 </head>
@@ -254,6 +281,12 @@
 
     <!-- 👑 薄金と白銀のメタリックバナータイトル -->
     <h1>✨ 一斉申請マニュアル ✨</h1>
+
+    <!-- 📝 導入メッセージ -->
+    <div class="intro-box">
+        本日は一斉申請イベントにご参加いただきありがとうございます。<br>
+        マニュアルの画像を確認しながら、上から順に進めてください。
+    </div>
 
     <!-- ────────── STEP 1 ────────── -->
     <div class="step-card">
@@ -313,28 +346,12 @@
         </div>
     </div>
 
-    <!-- ────────── STEP 5 ────────── -->
+    <!-- ────────── STEP 5（3つの例文選択） ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 5</div>
-        <div class="step-title">項目5：開催場所コードを入力する</div>
+        <div class="step-title">項目5：システム連携キー（例文選択）</div>
         <div class="image-box">
             <img src="step5.png" alt="手順5" class="flow-image">
-        </div>
-        <div class="copy-item">
-            <span class="copy-label">コピーする内容</span>
-            <div class="input-row">
-                <input type="text" class="input-text" id="t5" value="SP-TOKYO-01" readonly>
-                <button class="copy-btn" onclick="copyText('t5', this)">コピー</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ────────── STEP 6 ────────── -->
-    <div class="step-card">
-        <div class="step-number">STEP 6</div>
-        <div class="step-title">項目6：システム連携キー（例文選択）</div>
-        <div class="image-box">
-            <img src="step6.png" alt="手順6" class="flow-image">
         </div>
         
         <p style="font-size:12px; color:#dc3545; font-weight:bold; margin:0 0 10px 0;">
@@ -344,22 +361,38 @@
         <div class="copy-item">
             <span class="copy-label">例文 1</span>
             <div class="input-row">
-                <textarea class="input-text" id="t6_v1" readonly style="resize:none; height:auto;" rows="4">ここに長文の例文1が入ります。行数が増えて文章の箱が縦に伸びても、右側のコピーボタンは引き伸ばされず綺麗に配置されます。</textarea>
-                <button class="copy-btn" onclick="copyText('t6_v1', this)">コピー</button>
+                <textarea class="input-text" id="t5_v1" readonly style="resize:none; height:auto;" rows="4">ここに長文の例文1が入ります。行数が増えて文章の箱が縦に伸びても、右側のコピーボタンは引き伸ばされず綺麗に配置されます。</textarea>
+                <button class="copy-btn" onclick="copyText('t5_v1', this)">コピー</button>
             </div>
         </div>
         <div class="copy-item">
             <span class="copy-label">例文 2</span>
             <div class="input-row">
-                <textarea class="input-text" id="t6_v2" readonly style="resize:none; height:auto;" rows="4">ここに長文の例文2が入ります。行数が増えて文章の箱が縦に伸びても、右側のコピーボタンは引き伸ばされず綺麗に配置されます。</textarea>
-                <button class="copy-btn" onclick="copyText('t6_v2', this)">コピー</button>
+                <textarea class="input-text" id="t5_v2" readonly style="resize:none; height:auto;" rows="4">ここに長文の例文2が入ります。行数が増えて文章の箱が縦に伸びても、右側のコピーボタンは引き伸ばされず綺麗に配置されます。</textarea>
+                <button class="copy-btn" onclick="copyText('t5_v2', this)">コピー</button>
             </div>
         </div>
         <div class="copy-item">
             <span class="copy-label">例文 3</span>
             <div class="input-row">
-                <textarea class="input-text" id="t6_v3" readonly style="resize:none; height:auto;" rows="4">ここに長文の例文3が入ります。行数が増えて文章の箱が縦に伸びても、右側のコピーボタンは引き伸ばされず綺麗に配置されます。</textarea>
-                <button class="copy-btn" onclick="copyText('t6_v3', this)">コピー</button>
+                <textarea class="input-text" id="t5_v3" readonly style="resize:none; height:auto;" rows="4">ここに長文の例文3が入ります。行数が増えて文章の箱が縦に伸びても、右側のコピーボタンは引き伸ばされず綺麗に配置されます。</textarea>
+                <button class="copy-btn" onclick="copyText('t5_v3', this)">コピー</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ────────── STEP 6 ────────── -->
+    <div class="step-card">
+        <div class="step-number">STEP 6</div>
+        <div class="step-title">項目6：開催場所コードを入力する</div>
+        <div class="image-box">
+            <img src="step6.png" alt="手順6" class="flow-image">
+        </div>
+        <div class="copy-item">
+            <span class="copy-label">コピーする内容</span>
+            <div class="input-row">
+                <input type="text" class="input-text" id="t6" value="SP-TOKYO-01" readonly>
+                <button class="copy-btn" onclick="copyText('t6', this)">コピー</button>
             </div>
         </div>
     </div>
@@ -424,9 +457,14 @@
         
         <div class="finish-comment-box">
             <span class="finish-label">💝 メッセージ</span>
-            <div class="finish-text">✨ 以上で申請手順はすべて完了です。ご協力ありがとうございました！ ✨</div>
+            <div class="finish-text">✨ 以上で申請手順はすべて完了です。<br>ご協力ありがとうございました！ ✨</div>
         </div>
     </div>
+
+    <!-- 👤 作成者欄 -->
+    <footer>
+        © 2026 Created by あなたのお名前 / 所属組織名
+    </footer>
 
     <!-- コピー機能のJavaScript -->
     <script>
@@ -441,16 +479,20 @@
             document.execCommand("copy");
             document.body.removeChild(tempInput);
             
-            // 成功表示（サイズは固定されたまま、「コピー済」に切り替わります）
-            var originalText = button.innerText;
+            // 🌟 1. コピー直後（10秒間）：全面緑色の「コピー済」
             button.innerText = "コピー済";
             button.classList.add("copied");
+            button.classList.remove("history-done"); 
             
-            // 💡 タイマーを10000ミリ秒（10秒間）に設定しました
+            // 🌟 2. 10秒経過した後の処理
             setTimeout(function() {
-                button.innerText = originalText;
+                // 緑の背景を解除（通常の金銀に戻る）
                 button.classList.remove("copied");
-            }, 10000);
+                // 履歴表示用クラスを追加
+                button.classList.add("history-done");
+                // 文字の頭にチェックマークを付けて、再コピーも可能な「✅ コピー」に変更！
+                button.innerText = "✅ コピー";
+            }, 10000); 
         }
     </script>
 
