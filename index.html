@@ -15,37 +15,34 @@
             background-color: #f8f9fa;
         }
         
-        /* 👑 上品なピンクのフチ取りで、白背景でもハッキリ見える金銀キラキラタイトル */
+        /* 🎀 濃すぎない上品なくすみピンク背景＋金銀キラキラタイトル */
         h1 {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 900;
             text-align: center;
-            margin: 20px 0 25px 0;
-            padding-bottom: 5px;
-            letter-spacing: 2px;
+            margin: 10px 0 25px 0;
+            padding: 15px 10px;
+            letter-spacing: 1px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(180, 120, 140, 0.15);
+            
+            /* 金銀文字が綺麗に引き立つ、濃すぎない上品なくすみピンクのグラデーション */
+            background: linear-gradient(135deg, #c896a6 0%, #b37d8e 50%, #9e6477 100%);
             
             /* 金銀のメタリックグラデーション文字 */
-            background: linear-gradient(135deg, 
-                #d4af37 0%,   /* 金 */
-                #f3e5ab 25%,  /* 薄金 */
+            background-image: linear-gradient(135deg, 
+                #b8860b 0%,   /* 濃い金 */
+                #f3e5ab 25%,  /* 明るい金 */
                 #ffffff 45%,  /* 輝き白 */
                 #e6e6e6 55%,  /* 銀 */
-                #f3e5ab 75%,  /* 薄金 */
-                #d4af37 100%  /* 金 */
+                #f3e5ab 75%,  /* 明るい金 */
+                #b8860b 100%  /* 濃い金 */
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             
-            /* 🌸 視認性が高く上品なディープチェリーピンク（#aa1455）の太いフチ取り */
-            filter: drop-shadow(0px 2px 4px rgba(170, 20, 85, 0.3))
-                    drop-shadow( 1px  1px 0px #aa1455)
-                    drop-shadow(-1px  1px 0px #aa1455)
-                    drop-shadow( 1px -1px 0px #aa1455)
-                    drop-shadow(-1px -1px 0px #aa1455)
-                    drop-shadow( 1px  0px 0px #aa1455)
-                    drop-shadow(-1px  0px 0px #aa1455)
-                    drop-shadow( 0px  1px 0px #aa1455)
-                    drop-shadow( 0px -1px 0px #aa1455);
+            /* 白背景の上でも文字の輪郭をすっきり見せる微細なシャドウ */
+            filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.4));
         }
 
         .step-card {
@@ -205,7 +202,7 @@
 </head>
 <body>
 
-    <!-- 👑 上品なピンクでフチ取った金銀キラキラタイトル -->
+    <!-- 👑 視認性を改善した上品なくすみピンク背景＋金銀キラキラタイトル -->
     <h1>✨ 一斉申請マニュアル ✨</h1>
 
     <!-- ────────── STEP 1 ────────── -->
