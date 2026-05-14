@@ -231,6 +231,55 @@
             display: none;
         }
 
+        /* 🌐 本番フォームへのリンクボタン（横に広く目立たせるスタイル） */
+        .form-link-btn {
+            width: 100%; /* 横幅いっぱいに広げる */
+            margin-top: 10px;
+            font-size: 15px;
+            border-color: #ccae3d; /* 少しゴールド感を強めて目立たせる */
+            padding: 8px 0; 
+            font-weight: bold;
+            color: #2b2510; 
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+            text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+            height: 37px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box; 
+            text-decoration: none; /* リンクの下線を消す */
+    
+            background: linear-gradient(135deg, 
+                #d9c382 0%,   
+                #f7edd2 20%,  
+                #e1e7ed 35%,  
+                #ffffff 45%,  
+                #ffffff 55%,  
+                #e1e7ed 65%,  
+                #f7edd2 80%,  
+                #d9c382 100%  
+            );
+            background-size: 200% auto;
+        }
+        /* キラキラ光るモーションをリンクボタンにも適用 */
+        .form-link-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 30%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(30deg);
+            animation: shine-effect 3s infinite linear;
+        }
+
+        
         .sub-data-list {
             margin-top: 10px;
             border-top: 1px dashed #dee2e6;
@@ -292,6 +341,11 @@
             <span class="info-label">💡 操作案内</span>
             <div class="info-text">ご自身のStationheadアカウント名を入力してください</div>
         </div>
+        <!-- 🌐 フォームへのリンクボタン（最初） -->
+        <!-- 💡「href="ここにURL"」の部分を、本番の申請フォームのURLに書き換えてください -->
+        <a href="https://www.stationhead.com/p/request-channel" target="_blank" rel="noopener noreferrer" class="form-link-btn">
+            Stationhead申請フォームを開く ↗
+        </a>
     </div>
 
     <!-- ────────── STEP 2 ────────── -->
@@ -447,7 +501,12 @@
             <span class="info-label">💡 操作案内</span>
             <div class="info-text">すべての入力が終わったら、画面最下部にある「Submit Request」ボタンをタップしてください</div>
         </div>
-        
+        <!-- 🌐 ここ（メッセージ枠の上）にボタンを追加 ────────── -->
+        <!-- 💡「href="ここにURL"」の部分を、本番の申請フォームのURLに書き換えてください -->
+        <a href="https://www.stationhead.com/p/request-channel" target="_blank" rel="noopener noreferrer" class="form-link-btn" style="margin-bottom: 15px;">
+            Stationhead申請フォームを開く ↗
+        </a>
+        <!-- ────────────────────────────────────────────── -->
         <div class="finish-comment-box">
             <span class="finish-label">💎メッセージ🍯</span>
             <div class="finish-text">以上で申請手順はすべて完了です<br>ご協力ありがとうございました！<br>一斉申請日以外でも24時間に1回申請できますので、<br>ご協力いただけたら幸いです</div>
