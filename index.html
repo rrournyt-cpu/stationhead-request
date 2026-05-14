@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一斉申請マニュアル</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            max-width: 480px; /* スマホ画面幅に最適化 */
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            font-size: 20px;
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        .step-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-number {
+            display: inline-block;
+            background: #343a40;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .step-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .image-box {
+            text-align: center;
+            background: #f1f3f5;
+            padding: 8px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .flow-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+        }
+        .copy-item {
+            background: #fdfdfd;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            padding: 10px;
+        }
+        .copy-label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 4px;
+        }
+        .input-row {
+            display: flex;
+            gap: 8px;
+        }
+        .input-text {
+            flex: 1;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        /* 👑 金銀に輝くキラキラメタリックボタン */
+        .copy-btn {
+            padding: 8px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #2b2510; /* 高級感のある焦げ茶文字 */
+            border: 1px solid #c5b358;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+            text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+            
+            /* 金銀融合グラデーション */
+            background: linear-gradient(135deg, 
+                #d4af37 0%,   /* 金 */
+                #f3e5ab 20%,  /* 薄金 */
+                #e6e6e6 40%,  /* 銀 */
+                #ffffff 50%,  /* 輝き白 */
+                #b3b3b3 60%,  /* 濃銀 */
+                #f3e5ab 80%,  /* 薄金 */
+                #d4af37 100%  /* 金 */
+            );
+            background-size: 200% auto;
+        }
+
+        /* ✨ 光が走り抜けるエフェクト */
+        .copy-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 30%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(30deg);
+            animation: shine-effect 3s infinite linear;
+        }
+
+        @keyframes shine-effect {
+            0% { left: -60%; }
+            30% { left: 140%; }
+            100% { left: 140%; }
+        }
+
+        /* ✅ コピー完了（グリーンに変色） */
+        .copy-btn.copied {
+            background: #28a745 !important;
+            color: #fff !important;
+            border-color: #28a745 !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+        .copy-btn.copied::after {
+            display: none;
+        }
+
+        /* STEP 8個別データ用 */
+        .sub-data-list {
+            margin-top: 10px;
+            border-top: 1px dashed #dee2e6;
+            padding-top: 5px;
+        }
+        .sub-data-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #efefef;
+        }
+        .sub-data-info {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+        .sub-data-row .copy-btn {
+            padding: 6px 14px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>一斉申請マニュアル</h1>
+
+    <!-- ────────── STEP 1 ────────── -->
+    <div class="step-card">
+        <div class="step-number">STEP 1</div>
+        <div class="step-title">項目1：申請タイトルを入力する</div>
+        <div class="image-box">
+            <img src="step1.png" alt="手順1" class="flow-image">
+        </div>
+        <div class="copy-item">
+            <span class="copy-label">コピーする内容</span>
+            <div class="input-row">
+                <input type="text" class="input-text" id="t1" value="【一斉】5月イベント申請" readonly>
+                <button class="copy-btn" onclick="copyText('t1', this)">コピー</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ────────── STEP 2 ────────── -->
+    <div class="step-card">
+        <div class="step-number">STEP 2</div>
+        <div class="step-title">項目2：イベントコードを入力する</div>
+        <div class="image-box">
+            <img src="step2.png" alt="手順2" class="flow-image">
+        </div>
+        <div class="copy-item">
+            <span class="copy-label">コピーする内容</span>
+            <div class="input-row">
+                <input type="text" class="input-text" id="t2" value="EV-2026-0514" readonly>
+                <button class="copy-btn" onclick="copyText('t2', this)">コピー</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ────────── STEP 3 ────────── -->
+    <div class="step-card">
+        <div class="step-number">STEP 3</div>
+        <div class="step-title">項目3：申請者種別を入力する</div>
+        <div class="image-box">
+            <img src="step3.png" alt="手順3" class="flow-image">
+        </div>
+        <div class="copy-item">
+            <span class="copy-label">コピーする内容</span>
+            <div class="input-row">
+                <input type="text" class="input-text" id="t3" value="一般参加者" readonly>
+                <button class="copy-btn" onclick="copyText('t3', this)">コピー</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ────────── STEP 4 ────────── -->
+    <div class="step-card">
+        <div class="step-number">STEP 4</div>
+        <div class="step-title">項目4：配信希望部署を入力する</div>
+        <div class="image-box">
+            <img src="step4.png" alt="手順4" class="flow-image">
+        </div>
+        <div class="copy-item">
+            <span class="copy-label">コピーする内容</span>
+            <div class="input-row">
+                <input type="text" class="input-text" id="t4" value="企画運営部" readonly>
+                <button class="copy-btn" onclick="copyText('t4', this)">コピー</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ────────── STEP 5 ────────── -->
+    <div class="step-card">
+        <div class="step-number">STEP 5</div>
+        <div class="step-title">項目5：開催場所コードを入力する</div>
+        <div class="image-box">
+            <img src="step5.png" alt="手順5" class="flow-image">
+        </div>
+        <div class="copy-item">
+            <span class="copy-label">コピーする内容</span>
+            <div class="input-row">
+                <input type="text" class="input-text" id="t5" value="SP-TOKYO-01" readonly>
+                <button class="copy-btn" onclick="copyText('t5', this)">コピー</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ────────── STEP 6 ────────── -->
+    <div class="step-card">
+        <div class="step-number">STEP 6</div>
+        <div class="step-title">項目6：システム連携キーを入力する</div>
+        <div class="image-box">
+            <img src="step6.png" alt="手順6" class="flow-image">
+        </div>
+        <div class="copy-item">
+            <span class="copy-label">コピーする内容</span>
+            <div class="input-row">
+                <input type="text" class="input-text" id="t6" value="KEY-998877" readonly>
+                <button class="copy-btn" onclick="copyText('t6', this)">コピー</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ────────── STEP 7 ────────── -->
+    <div class="step-card">
+        <div class="step-number">STEP 7</div>
+        <div class="step-title">項目7：共通パスワードを入力する</div>
+        <div class="image-box">
+            <img src="step7.png" alt="手順7" class="flow-image">
+        </div>
+        <div class="copy-item">
+            <span class="copy-label">コピーする内容</span>
+            <div class="input-row">
+                <input type="text" class="input-text" id="t7" value="EventPass2026" readonly>
+                <button class="copy-btn" onclick="copyText('t7', this)">コピー</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ────────── STEP 8（大量コピーエリア） ────────── -->
+    <div class="step-card" style="border-top: 4px solid #d4af37;">
+        <div class="step-number">STEP 8</div>
+        <div class="step-title">項目8：アカウント入力</div>
+        <div class="image-box">
+            <img src="step8.png" alt="手順8" class="flow-image">
+        </div>
+        <p style="font-size:12px; color:#dc3545; font-weight:bold; margin:0 0 10px 0;">
+            ⚠️ アカウントを一つずつコピペしてください
+        </p>
+
+        <div class="sub-data-list">
+            <!-- 1〜15個分のボタンをあらかじめ生成しています。valueの中身を書き換えてください -->
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 01</span><input type="hidden" id="sub1" value="ACCOUNT-01"><button class="copy-btn" onclick="copyText('sub1', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 02</span><input type="hidden" id="sub2" value="ACCOUNT-02"><button class="copy-btn" onclick="copyText('sub2', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 03</span><input type="hidden" id="sub3" value="ACCOUNT-03"><button class="copy-btn" onclick="copyText('sub3', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 04</span><input type="hidden" id="sub4" value="ACCOUNT-04"><button class="copy-btn" onclick="copyText('sub4', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 05</span><input type="hidden" id="sub5" value="ACCOUNT-05"><button class="copy-btn" onclick="copyText('sub5', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 06</span><input type="hidden" id="sub6" value="ACCOUNT-06"><button class="copy-btn" onclick="copyText('sub6', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 07</span><input type="hidden" id="sub7" value="ACCOUNT-07"><button class="copy-btn" onclick="copyText('sub7', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 08</span><input type="hidden" id="sub8" value="ACCOUNT-08"><button class="copy-btn" onclick="copyText('sub8', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 09</span><input type="hidden" id="sub9" value="ACCOUNT-09"><button class="copy-btn" onclick="copyText('sub9', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 10</span><input type="hidden" id="sub10" value="ACCOUNT-10"><button class="copy-btn" onclick="copyText('sub10', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 11</span><input type="hidden" id="sub11" value="ACCOUNT-11"><button class="copy-btn" onclick="copyText('sub11', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 12</span><input type="hidden" id="sub12" value="ACCOUNT-12"><button class="copy-btn" onclick="copyText('sub12', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 13</span><input type="hidden" id="sub13" value="ACCOUNT-13"><button class="copy-btn" onclick="copyText('sub13', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 14</span><input type="hidden" id="sub14" value="ACCOUNT-14"><button class="copy-btn" onclick="copyText('sub14', this)">コピー</button></div>
+            <div class="sub-data-row"><span class="sub-data-info">アカウント 15</span><input type="hidden" id="sub15" value="ACCOUNT-15"><button class="copy-btn" onclick="copyText('sub15', this)">コピー</button></div>
+        </div>
+    </div>
+
+    <!-- コピー機能のJavaScript -->
+    <script>
+        function copyText(elementId, button) {
+            var copyTarget = document.getElementById(elementId);
+            
+            // クリップボードへのコピー処理
+            var tempInput = document.createElement("input");
+            tempInput.value = copyTarget.value;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            
+            // 成功表示（一時的に緑に変更）
+            var originalText = button.innerText;
+            button.innerText = "OK";
+            button.classList.add("copied");
+            
+            setTimeout(function() {
+                button.innerText = originalText;
+                button.classList.remove("copied");
+            }, 1200);
+        }
+    </script>
+
+</body>
+</html>
