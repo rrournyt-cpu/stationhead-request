@@ -156,7 +156,8 @@
 
         /* 👑 明るい白銀＆ゴールドのキラキラメタリックボタン */
         .copy-btn {
-            padding: 8px 20px;
+            padding: 8px 0; /* 🛠️ 左右の余白を0にして横幅をwidthで完全固定 */
+            width: 90px;    /* 🛠️ ボタンの横幅を90pxに完全固定 */
             font-size: 14px;
             font-weight: bold;
             color: #2b2510; 
@@ -172,6 +173,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            box-sizing: border-box; /* サイズ計算を狂わせない設定 */
             
             background: linear-gradient(135deg, 
                 #d9c382 0%,   
@@ -206,14 +208,14 @@
             100% { left: 140%; }
         }
 
-        /* ✅ コピー完了時の緑色デザイン（文字幅を考慮して少し横長になっても崩れない設定） */
+        /* ✅ コピー完了時の緑色デザイン（元のボタンと全く同じサイズ・位置をキープ） */
         .copy-btn.copied {
             background: #28a745 !important;
             color: #fff !important;
             border-color: #28a745 !important;
             text-shadow: none !important;
             box-shadow: none !important;
-            min-width: 76px; 
+            width: 90px !important; /* 🛠️ コピー完了時も横幅を90pxに完全固定 */
         }
         .copy-btn.copied::after {
             display: none;
@@ -236,13 +238,15 @@
             font-weight: bold;
             color: #333;
         }
+        
+        /* 🛠️ STEP 8 リスト内専用のボタン固定サイズ設定 */
         .sub-data-row .copy-btn {
-            padding: 6px 14px;
+            width: 78px; /* アカウントリスト内は少しスマートな78pxに固定 */
             font-size: 13px;
             height: 31px; 
         }
         .sub-data-row .copy-btn.copied {
-            min-width: 63px;
+            width: 78px !important; /* 緑色になっても78pxのまま固定 */
         }
     </style>
 </head>
@@ -437,12 +441,12 @@
             document.execCommand("copy");
             document.body.removeChild(tempInput);
             
-            // 成功表示（「コピー済」に文字を変えて、緑化を維持）
+            // 成功表示（サイズは固定されたまま、「コピー済」に切り替わります）
             var originalText = button.innerText;
             button.innerText = "コピー済";
             button.classList.add("copied");
             
-            // 💡 タイマーを5000ミリ秒（5秒間）に長めに設定しました
+            // 💡 タイマーを10000ミリ秒（10秒間）に設定しました
             setTimeout(function() {
                 button.innerText = originalText;
                 button.classList.remove("copied");
