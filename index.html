@@ -15,27 +15,21 @@
             background-color: #f8f9fa;
         }
         
-        /* 🎀 くすみピンク背景に調和する、視認性抜群の大人可愛いタイトル */
+        /* 🎀 淡いくすみピンク背景＋焦げ茶文字タイトル */
         h1 {
-            font-size: 21px;
+            font-size: 20px;
             font-weight: 800;
             text-align: center;
             margin: 10px 0 25px 0;
             padding: 15px 10px;
             letter-spacing: 1.5px;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(180, 120, 140, 0.15);
-            
-            /* 枠：上品なくすみピンクのグラデーション（変更なし） */
-            background: linear-gradient(135deg, #c896a6 0%, #b37d8e 50%, #9e6477 100%);
-            
-            /* 🍫 文字色：金銀から、くすみピンクと相性が良く最も見やすい「濃厚な焦げ茶色」に変更 */
+            box-shadow: 0 4px 10px rgba(180, 120, 140, 0.08);
+            background: linear-gradient(135deg, #e4c1cc 0%, #dbb1be 50%, #cca0af 100%);
             color: #2b2510;
             -webkit-background-clip: initial;
             -webkit-text-fill-color: initial;
-            
-            /* 文字にわずかな白い光彩を入れ、さらに文字をくっきり引き立てます */
-            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
         }
 
         .step-card {
@@ -75,13 +69,17 @@
             border: 1px solid #dee2e6;
             border-radius: 6px;
         }
-        .copy-item, .input-item {
+        .copy-item, .info-item, .finish-comment-box {
             background: #fdfdfd;
             border: 1px solid #ced4da;
             border-radius: 6px;
             padding: 10px;
+            margin-bottom: 10px;
         }
-        .copy-label, .input-label {
+        .copy-item:last-child {
+            margin-bottom: 0;
+        }
+        .copy-label, .info-label, .finish-label {
             display: block;
             font-size: 12px;
             font-weight: bold;
@@ -101,17 +99,32 @@
             background: #f8f9fa;
             color: #333;
         }
-        .user-input {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 8px;
+        
+        .info-text, .finish-text {
             font-size: 14px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-            background: #fff;
+            color: #1a1a1a;
+            font-weight: 500;
+            padding: 4px 2px;
         }
 
-        /* 👑 金銀に輝くキラキラメタリックボタン（マニュアル本文はそのまま維持） */
+        /* 🎉 最終コメント専用の少し華やかな装飾 */
+        .finish-comment-box {
+            background: #fffdf5;
+            border: 1px solid #e9dba5;
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+        .finish-label {
+            color: #b8860b;
+        }
+        .finish-text {
+            color: #b8860b;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        /* 👑 金銀に輝くキラキラメタリックボタン */
         .copy-btn {
             padding: 8px 20px;
             font-size: 14px;
@@ -138,7 +151,6 @@
             background-size: 200% auto;
         }
 
-        /* ✨ 光が走り抜けるエフェクト */
         .copy-btn::after {
             content: '';
             position: absolute;
@@ -157,7 +169,6 @@
             100% { left: 140%; }
         }
 
-        /* ✅ コピー完了（グリーンに変色） */
         .copy-btn.copied {
             background: #28a745 !important;
             color: #fff !important;
@@ -169,7 +180,6 @@
             display: none;
         }
 
-        /* STEP 8個別データ用 */
         .sub-data-list {
             margin-top: 10px;
             border-top: 1px dashed #dee2e6;
@@ -195,7 +205,6 @@
 </head>
 <body>
 
-    <!-- 👑 視認性を最優先した上品なくすみピンク背景＋焦げ茶文字タイトル -->
     <h1>✨ 一斉申請マニュアル ✨</h1>
 
     <!-- ────────── STEP 1 ────────── -->
@@ -205,9 +214,9 @@
         <div class="image-box">
             <img src="step1.png" alt="手順1" class="flow-image">
         </div>
-        <div class="input-item">
-            <span class="input-label">👇 申請画面にはご自身の情報を入力してください</span>
-            <input type="text" class="user-input" placeholder="例: email@example.com (コピーボタンはありません)">
+        <div class="info-item">
+            <span class="info-label">💡 操作案内</span>
+            <div class="info-text">申請画面のメールアドレス欄に、ご自身のアドレスを入力してください。（※コピーボタンはありません）</div>
         </div>
     </div>
 
@@ -234,9 +243,9 @@
         <div class="image-box">
             <img src="step3.png" alt="手順3" class="flow-image">
         </div>
-        <div class="input-item">
-            <span class="input-label">👇 申請画面にはご自身の情報を入力してください</span>
-            <input type="text" class="user-input" placeholder="例: 山田 太郎 (コピーボタンはありません)">
+        <div class="info-item">
+            <span class="info-label">💡 操作案内</span>
+            <div class="info-text">申請画面の氏名欄に、ご自身の氏名を入力してください。（※コピーボタンはありません）</div>
         </div>
     </div>
 
@@ -275,18 +284,34 @@
     <!-- ────────── STEP 6 ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 6</div>
-        <div class="step-title">項目6：システム連携キーを入力する</div>
+        <div class="step-title">項目6：システム連携キー（例文選択）</div>
         <div class="image-box">
             <img src="step6.png" alt="手順6" class="flow-image">
         </div>
+        
         <p style="font-size:12px; color:#dc3545; font-weight:bold; margin:0 0 10px 0;">
-            ⚠️ ここにはSTEP6用の注意事項を一文記述してください
+            ⚠️ 以下の3つの例文のうち、いずれか1つをコピーして使用してください
         </p>
+        
         <div class="copy-item">
-            <span class="copy-label">コピーする内容</span>
+            <span class="copy-label">例文 1</span>
             <div class="input-row">
-                <input type="text" class="input-text" id="t6" value="KEY-998877" readonly>
-                <button class="copy-btn" onclick="copyText('t6', this)">コピー</button>
+                <input type="text" class="input-text" id="t6_v1" value="KEY-998877A" readonly>
+                <button class="copy-btn" onclick="copyText('t6_v1', this)">コピー</button>
+            </div>
+        </div>
+        <div class="copy-item">
+            <span class="copy-label">例文 2</span>
+            <div class="input-row">
+                <input type="text" class="input-text" id="t6_v2" value="KEY-998877B" readonly>
+                <button class="copy-btn" onclick="copyText('t6_v2', this)">コピー</button>
+            </div>
+        </div>
+        <div class="copy-item">
+            <span class="copy-label">例文 3</span>
+            <div class="input-row">
+                <input type="text" class="input-text" id="t6_v3" value="KEY-998877C" readonly>
+                <button class="copy-btn" onclick="copyText('t6_v3', this)">コピー</button>
             </div>
         </div>
     </div>
@@ -307,8 +332,8 @@
         </div>
     </div>
 
-    <!-- ────────── STEP 8 ────────── -->
-    <div class="step-card" style="border-top: 4px solid #d4af37;">
+    <!-- ────────── STEP 8（外枠の金線を廃止してデザイン統一） ────────── -->
+    <div class="step-card">
         <div class="step-number">STEP 8</div>
         <div class="step-title">項目8：アカウント入力</div>
         <div class="image-box">
@@ -334,6 +359,26 @@
             <div class="sub-data-row"><span class="sub-data-info">アカウント 13</span><input type="hidden" id="sub13" value="ACCOUNT-13"><button class="copy-btn" onclick="copyText('sub13', this)">コピー</button></div>
             <div class="sub-data-row"><span class="sub-data-info">アカウント 14</span><input type="hidden" id="sub14" value="ACCOUNT-14"><button class="copy-btn" onclick="copyText('sub14', this)">コピー</button></div>
             <div class="sub-data-row"><span class="sub-data-info">アカウント 15</span><input type="hidden" id="sub15" value="ACCOUNT-15"><button class="copy-btn" onclick="copyText('sub15', this)">コピー</button></div>
+        </div>
+    </div>
+
+    <!-- ────────── STEP 9（最終完了ステップ・リクエスト行程） ────────── -->
+    <div class="step-card">
+        <div class="step-number">STEP 9</div>
+        <div class="step-title">最終ステップ：申請を完了する</div>
+        <div class="image-box">
+            <!-- 💡 リクエスト送信ボタンをタップする箇所のスクショ用 -->
+            <img src="step9.png" alt="手順9（申請完了ボタン）" class="flow-image">
+        </div>
+        <div class="info-item">
+            <span class="info-label">💡 操作案内</span>
+            <div class="info-text">すべての入力が終わったら、画面最下部にある「リクエスト送信」ボタンをタップして一斉申請を完了させてください。</div>
+        </div>
+        
+        <!-- 💡 最終コメントを表示するエリア -->
+        <div class="finish-comment-box">
+            <span class="finish-label">💝 メッセージ</span>
+            <div class="finish-text">✨ 以上で申請手順はすべて完了です。ご協力ありがとうございました！ ✨</div>
         </div>
     </div>
 
