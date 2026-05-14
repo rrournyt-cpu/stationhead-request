@@ -428,21 +428,49 @@
         </div>
     </div>
 
-    <!-- ────────── STEP 6 ────────── -->
+        <!-- ────────── STEP 6（画像2枚 ＆ 3連コピーボタン仕様） ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 6</div>
         <div class="step-title">チャンネルの色番号を入力する（PCのみ入力可）</div>
+        
+        <!-- 📸 スマホのスクショ画像を縦に2枚並べるエリア -->
         <div class="image-box">
-            <img src="step6.png" alt="手順6" class="flow-image">
+            <img src="step6.png" alt="手順6（1枚目）" class="flow-image" style="margin-bottom: 8px;">
+            <img src="step6-2.png" alt="手順6（2枚目）" class="flow-image">
         </div>
+        
+        <p style="font-size:12px; color:#dc3545; font-weight:bold; margin:0 0 10px 0;">
+            ⚠️ 3桁の数字をそれぞれコピーして入力してください
+        </p>
+        
+        <!-- 項目1（上段の数字3桁用データ） -->
         <div class="copy-item">
-            <span class="copy-label">コピーする内容</span>
+            <span class="copy-label">コード（上段）</span>
             <div class="input-row">
-                <input type="text" class="input-text" id="t6" value="SP-TOKYO-01" readonly>
-                <button class="copy-btn" onclick="copyText('t6', this)">コピー</button>
+                <input type="text" class="input-text" id="t6_v1" value="101" readonly>
+                <button class="copy-btn" onclick="copyText('t6_v1', this)">コピー</button>
+            </div>
+        </div>
+        
+        <!-- 項目2（中段の数字3桁用データ） -->
+        <div class="copy-item">
+            <span class="copy-label">コード（中段）</span>
+            <div class="input-row">
+                <input type="text" class="input-text" id="t6_v2" value="202" readonly>
+                <button class="copy-btn" onclick="copyText('t6_v2', this)">コピー</button>
+            </div>
+        </div>
+        
+        <!-- 項目3（下段の数字3桁用データ） -->
+        <div class="copy-item">
+            <span class="copy-label">コード（下段）</span>
+            <div class="input-row">
+                <input type="text" class="input-text" id="t6_v3" value="303" readonly>
+                <button class="copy-btn" onclick="copyText('t6_v3', this)">コピー</button>
             </div>
         </div>
     </div>
+
 
     <!-- ────────── STEP 7 ────────── -->
     <div class="step-card">
