@@ -118,7 +118,7 @@
         .input-row {
             display: flex;
             gap: 8px;
-            align-items: stretch; /* ボタンの高さを長文テキストエリアと同期 */
+            align-items: center; /* 🛠️ ボタンが縦に引き伸ばされるのを防ぐ設定に変更 */
         }
         .input-text {
             flex: 1;
@@ -128,7 +128,7 @@
             border-radius: 4px;
             background: #f8f9fa;
             color: #333;
-            font-family: inherit; /* フォントを統一 */
+            font-family: inherit;
         }
         
         .info-text, .finish-text {
@@ -154,13 +154,13 @@
             font-weight: bold;
         }
 
-        /* 👑 プラチナ白銀を引き立てるキラキラメタリックボタン */
+        /* 👑 明るい白銀＆ゴールドのキラキラメタリックボタン */
         .copy-btn {
             padding: 8px 20px;
             font-size: 14px;
             font-weight: bold;
             color: #2b2510; 
-            border: 1px solid #c5b358; 
+            border: 1px solid #c9d2db; 
             border-radius: 6px;
             cursor: pointer;
             white-space: nowrap;
@@ -168,6 +168,10 @@
             overflow: hidden;
             box-shadow: 0 3px 6px rgba(0,0,0,0.16);
             text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+            height: 37px; /* 🛠️ ボタンの高さを37pxに完全固定 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             
             background: linear-gradient(135deg, 
                 #d9c382 0%,   
@@ -233,6 +237,7 @@
         .sub-data-row .copy-btn {
             padding: 6px 14px;
             font-size: 13px;
+            height: 31px; /* 🛠️ アカウントリスト内のボタンの高さ */
         }
     </style>
 </head>
@@ -315,7 +320,7 @@
         </div>
     </div>
 
-    <!-- ────────── 🛠️ STEP 6（長文対応：縦に自動で広がる仕様） ────────── -->
+    <!-- ────────── STEP 6 ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 6</div>
         <div class="step-title">項目6：システム連携キー（例文選択）</div>
@@ -327,11 +332,11 @@
             ⚠️ 以下の3つの例文のうち、いずれか1つをコピーして使用してください
         </p>
         
-        <!-- 例文1（最大8行程度まで自動で縦伸びします。改行コードは入れずにそのまま長文を入力して大丈夫です） -->
+        <!-- 例文1 -->
         <div class="copy-item">
             <span class="copy-label">例文 1</span>
             <div class="input-row">
-                <textarea class="input-text" id="t6_v1" readonly style="resize:none; height:auto;" rows="4">ここに長文の例文1が入ります。長文でも右に隠れず自動で改行され、縦に広がります。</textarea>
+                <textarea class="input-text" id="t6_v1" readonly style="resize:none; height:auto;" rows="4">ここに長文の例文1が入ります。行数が増えて文章の箱が縦に伸びても、右側のコピーボタンは引き伸ばされず綺麗に配置されます。</textarea>
                 <button class="copy-btn" onclick="copyText('t6_v1', this)">コピー</button>
             </div>
         </div>
@@ -340,7 +345,7 @@
         <div class="copy-item">
             <span class="copy-label">例文 2</span>
             <div class="input-row">
-                <textarea class="input-text" id="t6_v2" readonly style="resize:none; height:auto;" rows="4">ここに長文の例文2が入ります。長文でも右に隠れず自動で改行され、縦に広がります。</textarea>
+                <textarea class="input-text" id="t6_v2" readonly style="resize:none; height:auto;" rows="4">ここに長文の例文2が入ります。行数が増えて文章の箱が縦に伸びても、右側のコピーボタンは引き伸ばされず綺麗に配置されます。</textarea>
                 <button class="copy-btn" onclick="copyText('t6_v2', this)">コピー</button>
             </div>
         </div>
@@ -349,7 +354,7 @@
         <div class="copy-item">
             <span class="copy-label">例文 3</span>
             <div class="input-row">
-                <textarea class="input-text" id="t6_v3" readonly style="resize:none; height:auto;" rows="4">ここに長文の例文3が入ります。長文でも右に隠れず自動で改行され、縦に広がります。</textarea>
+                <textarea class="input-text" id="t6_v3" readonly style="resize:none; height:auto;" rows="4">ここに長文の例文3が入ります。行数が増えて文章の箱が縦に伸びても、右側のコピーボタンは引き伸ばされず綺麗に配置されます。</textarea>
                 <button class="copy-btn" onclick="copyText('t6_v3', this)">コピー</button>
             </div>
         </div>
@@ -424,7 +429,7 @@
         function copyText(elementId, button) {
             var copyTarget = document.getElementById(elementId);
             
-            var tempInput = document.createElement("textarea"); // コピー処理も複数行対応に変更
+            var tempInput = document.createElement("textarea");
             tempInput.value = copyTarget.value;
             document.body.appendChild(tempInput);
             tempInput.select();
