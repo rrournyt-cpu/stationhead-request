@@ -218,7 +218,7 @@
             100% { left: 140%; }
         }
 
-        /* ✅ コピー直後（10秒間）：鮮やかなグリーンに変化 */
+        /* ✅ コピー直後（5秒間）：鮮やかなグリーンに変化 */
         .copy-btn.copied {
             background: #28a745 !important;
             color: #fff !important;
@@ -271,38 +271,38 @@
 <body>
 
     <!-- 👑 薄金と白銀のメタリックバナータイトル -->
-    <h1>✨ 一斉申請マニュアル ✨</h1>
+    <h1>✨ cHaRmチャンネル開設申請ガイド ✨</h1>
 
     <!-- 📝 導入メッセージ -->
     <div class="intro-box">
-        本日は一斉申請イベントにご参加いただきありがとうございます。<br>
-        マニュアルの画像を確認しながら、上から順に進めてください。
+        Stationhead cHaRmチャンネル開設のための一斉申請にご協力いただきありがとうございます。<br>
+        ガイドを確認しながら、上から順に進めてください。入力項目は8個です。
     </div>
 
     <!-- ────────── STEP 1 ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 1</div>
-        <div class="step-title">項目1：ご自身のメールアドレスを入力する</div>
+        <div class="step-title">Stationheadアカウント名を入力する</div>
         <div class="image-box">
             <img src="step1.png" alt="手順1" class="flow-image">
         </div>
         <div class="info-item">
             <span class="info-label">💡 操作案内</span>
-            <div class="info-text">申請画面のメールアドレス欄に、ご自身のアドレスを入力してください。（※コピーボタンはありません）</div>
+            <div class="info-text">ご自身のStationheadアカウント名を入力してください</div>
         </div>
     </div>
 
     <!-- ────────── STEP 2 ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 2</div>
-        <div class="step-title">項目2：イベントコードを入力する</div>
+        <div class="step-title">項目2：ファンダム名を入力する</div>
         <div class="image-box">
             <img src="step2.png" alt="手順2" class="flow-image">
         </div>
         <div class="copy-item">
             <span class="copy-label">コピーする内容</span>
             <div class="input-row">
-                <input type="text" class="input-text" id="t2" value="EV-2026-0514" readonly>
+                <input type="text" class="input-text" id="t2" value="cHaRm" readonly>
                 <button class="copy-btn" onclick="copyText('t2', this)">コピー</button>
             </div>
         </div>
@@ -311,27 +311,27 @@
     <!-- ────────── STEP 3 ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 3</div>
-        <div class="step-title">項目3：申請者氏名を入力する</div>
+        <div class="step-title">メールアドレスを入力する</div>
         <div class="image-box">
             <img src="step3.png" alt="手順3" class="flow-image">
         </div>
         <div class="info-item">
             <span class="info-label">💡 操作案内</span>
-            <div class="info-text">申請画面の氏名欄に、ご自身の氏名を入力してください。（※コピーボタンはありません）</div>
+            <div class="info-text">申請画面のメールアドレス欄にご自身のアドレスを入力してください</div>
         </div>
     </div>
 
     <!-- ────────── STEP 4 ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 4</div>
-        <div class="step-title">項目4：配信希望部署を入力する</div>
+        <div class="step-title">アーティスト名を入力する</div>
         <div class="image-box">
             <img src="step4.png" alt="手順4" class="flow-image">
         </div>
         <div class="copy-item">
             <span class="copy-label">コピーする内容</span>
             <div class="input-row">
-                <input type="text" class="input-text" id="t4" value="企画運営部" readonly>
+                <input type="text" class="input-text" id="t4" value="ROIROM" readonly>
                 <button class="copy-btn" onclick="copyText('t4', this)">コピー</button>
             </div>
         </div>
@@ -340,7 +340,7 @@
     <!-- ────────── STEP 5（3つの例文選択） ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 5</div>
-        <div class="step-title">項目5：システム連携キー（例文選択）</div>
+        <div class="step-title">チャンネル開設理由を入力する</div>
         <div class="image-box">
             <img src="step5.png" alt="手順5" class="flow-image">
         </div>
@@ -375,7 +375,7 @@
     <!-- ────────── STEP 6 ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 6</div>
-        <div class="step-title">項目6：開催場所コードを入力する</div>
+        <div class="step-title">チャンネルの色番号を入力する（PCのみ入力可）</div>
         <div class="image-box">
             <img src="step6.png" alt="手順6" class="flow-image">
         </div>
@@ -391,7 +391,7 @@
     <!-- ────────── STEP 7 ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 7</div>
-        <div class="step-title">項目7：共通パスワードを入力する</div>
+        <div class="step-title">項目7：SpotifyのプレイリストURLを入力する</div>
         <div class="image-box">
             <img src="step7.png" alt="手順7" class="flow-image">
         </div>
@@ -407,7 +407,7 @@
     <!-- ────────── STEP 8 ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 8</div>
-        <div class="step-title">項目8：アカウント入力</div>
+        <div class="step-title">ホストアカウントを入力する</div>
         <div class="image-box">
             <img src="step8.png" alt="手順8" class="flow-image">
         </div>
@@ -436,25 +436,25 @@
 
     <!-- ────────── STEP 9 ────────── -->
     <div class="step-card">
-        <div class="step-number">STEP 9</div>
-        <div class="step-title">最終ステップ：申請を完了する</div>
+        <div class="step-number">LAST STEP</div>
+        <div class="step-title">申請を完了する</div>
         <div class="image-box">
             <img src="step9.png" alt="手順9（申請完了ボタン）" class="flow-image">
         </div>
         <div class="info-item">
             <span class="info-label">💡 操作案内</span>
-            <div class="info-text">すべての入力が終わったら、画面最下部にある「リクエスト送信」ボタンをタップして一斉申請を完了させてください。</div>
+            <div class="info-text">すべての入力が終わったら、画面最下部にある「Submit Request」ボタンをタップしてください</div>
         </div>
         
         <div class="finish-comment-box">
             <span class="finish-label">💝 メッセージ</span>
-            <div class="finish-text">✨ 以上で申請手順はすべて完了です。<br>ご協力ありがとうございました！ ✨</div>
+            <div class="finish-text">✨ 以上で申請手順はすべて完了です<br>ご協力ありがとうございました！<br>24時間に1回申請できるので、ご協力のほどよろしくお願いします ✨</div>
         </div>
     </div>
 
     <!-- 👤 作成者欄 -->
     <footer>
-        © 2026 Created by はこ X @hakostroi
+        © 2026 Created by はこ
     </footer>
 
     <!-- コピー機能のJavaScript -->
