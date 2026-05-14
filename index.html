@@ -170,7 +170,7 @@
         .copy-btn {
             padding: 8px 0; 
             width: 90px;    
-            font-size: 14px;
+            font-size: 14px; /* 🛠️ 通常時の文字サイズ（14px） */
             font-weight: bold;
             color: #2b2510; 
             border: 1px solid #c9d2db; 
@@ -231,11 +231,6 @@
             display: none;
         }
 
-        /* 💾 10秒経過後：文字が「✅ コピー」になった時の専用スタイル調整 */
-        .copy-btn.history-done {
-            font-size: 12px; /* ✅マークが入ってもはみ出さないよう微調整 */
-        }
-
         .sub-data-list {
             margin-top: 10px;
             border-top: 1px dashed #dee2e6;
@@ -256,15 +251,11 @@
         
         .sub-data-row .copy-btn {
             width: 78px; 
-            font-size: 13px;
+            font-size: 13px; /* 🛠️ STEP8のリスト内専用の文字サイズ（13px） */
             height: 31px; 
         }
         .sub-data-row .copy-btn.copied {
             width: 78px !important; 
-        }
-        .sub-data-row .copy-btn.history-done {
-            width: 78px !important;
-            font-size: 11px; 
         }
 
         /* 👤 作成者欄のスタイル */
@@ -479,18 +470,15 @@
             document.execCommand("copy");
             document.body.removeChild(tempInput);
             
-            // 🌟 1. コピー直後（10秒間）：全面緑色の「コピー済」
+            // 1. コピー直後（10秒間）：全面緑色の「コピー済」
             button.innerText = "コピー済";
             button.classList.add("copied");
-            button.classList.remove("history-done"); 
             
-            // 🌟 2. 10秒経過した後の処理
+            // 2. 10秒経過した後の処理
             setTimeout(function() {
                 // 緑の背景を解除（通常の金銀に戻る）
                 button.classList.remove("copied");
-                // 履歴表示用クラスを追加
-                button.classList.add("history-done");
-                // 文字の頭にチェックマークを付けて、再コピーも可能な「コピー✅」に変更！
+                // 文字サイズは一切小さくせず、ご指定の「コピー✅」に変更！
                 button.innerText = "コピー✅";
             }, 7000); 
         }
