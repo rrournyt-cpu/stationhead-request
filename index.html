@@ -15,34 +15,37 @@
             background-color: #f8f9fa;
         }
         
-        /* 👑 金銀文字を引き締める濃紺バナー風タイトル */
+        /* 👑 白背景でも100%クッキリ見える、フチ取り金銀キラキラタイトル */
         h1 {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 900;
             text-align: center;
-            margin: 10px 0 25px 0;
-            padding: 15px 10px;
-            letter-spacing: 1px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            margin: 20px 0 25px 0;
+            padding-bottom: 5px;
+            letter-spacing: 2px;
             
-            /* 文字が一番引き立つ深いネイビーのグラデーション背景 */
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            
-            /* 金銀融合のメタリックグラデーション文字 */
-            background-image: linear-gradient(135deg, 
-                #b8860b 0%,   /* 濃い金 */
-                #f3e5ab 25%,  /* 明るい金 */
+            /* 金銀のメタリックグラデーション文字 */
+            background: linear-gradient(135deg, 
+                #d4af37 0%,   /* 金 */
+                #f3e5ab 25%,  /* 薄金 */
                 #ffffff 45%,  /* 輝き白 */
                 #e6e6e6 55%,  /* 銀 */
-                #f3e5ab 75%,  /* 明るい金 */
-                #b8860b 100%  /* 濃い金 */
+                #f3e5ab 75%,  /* 薄金 */
+                #d4af37 100%  /* 金 */
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             
-            /* 文字の立体感を強調するシャドウ */
-            filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.5));
+            /* 🍫 高級感と可愛さのある焦げ茶色の太いフチ取り（文字輪郭） */
+            filter: drop-shadow(0px 2px 4px rgba(43, 37, 16, 0.3))
+                    drop-shadow( 1px  1px 0px #2b2510)
+                    drop-shadow(-1px  1px 0px #2b2510)
+                    drop-shadow( 1px -1px 0px #2b2510)
+                    drop-shadow(-1px -1px 0px #2b2510)
+                    drop-shadow( 1px  0px 0px #2b2510)
+                    drop-shadow(-1px  0px 0px #2b2510)
+                    drop-shadow( 0px  1px 0px #2b2510)
+                    drop-shadow( 0px -1px 0px #2b2510);
         }
 
         .step-card {
@@ -118,7 +121,7 @@
             background: #fff;
         }
 
-        /* 👑 金銀に輝くキラキラメタリックボタン */
+        /* 👑 金銀に輝くキラキラメタリックボタン（変更なし） */
         .copy-btn {
             padding: 8px 20px;
             font-size: 14px;
@@ -145,7 +148,7 @@
             background-size: 200% auto;
         }
 
-        /* ✨ 光が走り抜けるエフェクト */
+        /* ✨ 光が走り抜けるエフェクト（変更なし） */
         .copy-btn::after {
             content: '';
             position: absolute;
@@ -202,7 +205,7 @@
 </head>
 <body>
 
-    <!-- 👑 視認性を改善したネイビー背景＋金銀キラキラタイトル -->
+    <!-- 👑 フチ取りで視認性をアップした金銀キラキラタイトル -->
     <h1>✨ 一斉申請マニュアル ✨</h1>
 
     <!-- ────────── STEP 1 ────────── -->
