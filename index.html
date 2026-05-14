@@ -15,29 +15,34 @@
             background-color: #f8f9fa;
         }
         
-        /* 👑 金銀キラキラ＆大人可愛いメインタイトル */
+        /* 👑 金銀文字を引き締める濃紺バナー風タイトル */
         h1 {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 900;
             text-align: center;
             margin: 10px 0 25px 0;
-            padding-bottom: 5px;
+            padding: 15px 10px;
             letter-spacing: 1px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            
+            /* 文字が一番引き立つ深いネイビーのグラデーション背景 */
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
             
             /* 金銀融合のメタリックグラデーション文字 */
-            background: linear-gradient(135deg, 
+            background-image: linear-gradient(135deg, 
                 #b8860b 0%,   /* 濃い金 */
-                #e6ca65 25%,  /* 明るい金 */
+                #f3e5ab 25%,  /* 明るい金 */
                 #ffffff 45%,  /* 輝き白 */
-                #dcdcdc 55%,  /* 銀 */
-                #e6ca65 75%,  /* 明るい金 */
+                #e6e6e6 55%,  /* 銀 */
+                #f3e5ab 75%,  /* 明るい金 */
                 #b8860b 100%  /* 濃い金 */
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             
-            /* 文字をくっきり可愛く見せるゴールドの影 */
-            filter: drop-shadow(0px 2px 3px rgba(184, 134, 11, 0.4));
+            /* 文字の立体感を強調するシャドウ */
+            filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.5));
         }
 
         .step-card {
@@ -197,7 +202,7 @@
 </head>
 <body>
 
-    <!-- 👑 キラキラタイトル -->
+    <!-- 👑 視認性を改善したネイビー背景＋金銀キラキラタイトル -->
     <h1>✨ 一斉申請マニュアル ✨</h1>
 
     <!-- ────────── STEP 1 ────────── -->
@@ -339,6 +344,7 @@
         </div>
     </div>
 
+    <!-- コピー機能のJavaScript -->
     <script>
         function copyText(elementId, button) {
             var copyTarget = document.getElementById(elementId);
