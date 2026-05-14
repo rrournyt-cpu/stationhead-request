@@ -15,7 +15,7 @@
             background-color: #f8f9fa;
         }
         
-        /* 🎀 淡いくすみピンク背景＋焦げ茶文字タイトル */
+        /* 👑 コピーボタンと完全にお揃いの「金銀キラキラメタリック」バナータイトル */
         h1 {
             font-size: 20px;
             font-weight: 800;
@@ -24,12 +24,26 @@
             padding: 15px 10px;
             letter-spacing: 1.5px;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(180, 120, 140, 0.08);
-            background: linear-gradient(135deg, #e4c1cc 0%, #dbb1be 50%, #cca0af 100%);
+            border: 1px solid #c5b358;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            
+            /* 🍫 文字色：コピーボタンの文字色と同じ濃厚な焦げ茶色で統一 */
             color: #2b2510;
             -webkit-background-clip: initial;
             -webkit-text-fill-color: initial;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+            
+            /* 👑 背景：コピーボタンと全く同じ金銀融合グラデーション */
+            background: linear-gradient(135deg, 
+                #d4af37 0%,   /* 金 */
+                #f3e5ab 20%,  /* 薄金 */
+                #e6e6e6 40%,  /* 銀 */
+                #ffffff 50%,  /* 輝き白 */
+                #b3b3b3 60%,  /* 濃銀 */
+                #f3e5ab 80%,  /* 薄金 */
+                #d4af37 100%  /* 金 */
+            );
+            background-size: 200% auto;
         }
 
         .step-card {
@@ -107,7 +121,6 @@
             padding: 4px 2px;
         }
 
-        /* 🎉 最終コメント専用の少し華やかな装飾 */
         .finish-comment-box {
             background: #fffdf5;
             border: 1px solid #e9dba5;
@@ -205,6 +218,7 @@
 </head>
 <body>
 
+    <!-- 👑 コピーボタンとお揃いの金銀メタリックタイトル -->
     <h1>✨ 一斉申請マニュアル ✨</h1>
 
     <!-- ────────── STEP 1 ────────── -->
@@ -332,7 +346,7 @@
         </div>
     </div>
 
-    <!-- ────────── STEP 8（外枠の金線を廃止してデザイン統一） ────────── -->
+    <!-- ────────── STEP 8 ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 8</div>
         <div class="step-title">項目8：アカウント入力</div>
@@ -362,12 +376,11 @@
         </div>
     </div>
 
-    <!-- ────────── STEP 9（最終完了ステップ・リクエスト行程） ────────── -->
+    <!-- ────────── STEP 9 ────────── -->
     <div class="step-card">
         <div class="step-number">STEP 9</div>
         <div class="step-title">最終ステップ：申請を完了する</div>
         <div class="image-box">
-            <!-- 💡 リクエスト送信ボタンをタップする箇所のスクショ用 -->
             <img src="step9.png" alt="手順9（申請完了ボタン）" class="flow-image">
         </div>
         <div class="info-item">
@@ -375,7 +388,6 @@
             <div class="info-text">すべての入力が終わったら、画面最下部にある「リクエスト送信」ボタンをタップして一斉申請を完了させてください。</div>
         </div>
         
-        <!-- 💡 最終コメントを表示するエリア -->
         <div class="finish-comment-box">
             <span class="finish-label">💝 メッセージ</span>
             <div class="finish-text">✨ 以上で申請手順はすべて完了です。ご協力ありがとうございました！ ✨</div>
