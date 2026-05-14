@@ -15,34 +15,27 @@
             background-color: #f8f9fa;
         }
         
-        /* 🎀 濃すぎない上品なくすみピンク背景＋金銀キラキラタイトル */
+        /* 🎀 くすみピンク背景に調和する、視認性抜群の大人可愛いタイトル */
         h1 {
-            font-size: 20px;
-            font-weight: 900;
+            font-size: 21px;
+            font-weight: 800;
             text-align: center;
             margin: 10px 0 25px 0;
             padding: 15px 10px;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(180, 120, 140, 0.15);
             
-            /* 金銀文字が綺麗に引き立つ、濃すぎない上品なくすみピンクのグラデーション */
+            /* 枠：上品なくすみピンクのグラデーション（変更なし） */
             background: linear-gradient(135deg, #c896a6 0%, #b37d8e 50%, #9e6477 100%);
             
-            /* 金銀のメタリックグラデーション文字 */
-            background-image: linear-gradient(135deg, 
-                #b8860b 0%,   /* 濃い金 */
-                #f3e5ab 25%,  /* 明るい金 */
-                #ffffff 45%,  /* 輝き白 */
-                #e6e6e6 55%,  /* 銀 */
-                #f3e5ab 75%,  /* 明るい金 */
-                #b8860b 100%  /* 濃い金 */
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            /* 🍫 文字色：金銀から、くすみピンクと相性が良く最も見やすい「濃厚な焦げ茶色」に変更 */
+            color: #2b2510;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
             
-            /* 白背景の上でも文字の輪郭をすっきり見せる微細なシャドウ */
-            filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.4));
+            /* 文字にわずかな白い光彩を入れ、さらに文字をくっきり引き立てます */
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
         }
 
         .step-card {
@@ -118,7 +111,7 @@
             background: #fff;
         }
 
-        /* 👑 金銀に輝くキラキラメタリックボタン（変更なし） */
+        /* 👑 金銀に輝くキラキラメタリックボタン（マニュアル本文はそのまま維持） */
         .copy-btn {
             padding: 8px 20px;
             font-size: 14px;
@@ -145,7 +138,7 @@
             background-size: 200% auto;
         }
 
-        /* ✨ 光が走り抜けるエフェクト（変更なし） */
+        /* ✨ 光が走り抜けるエフェクト */
         .copy-btn::after {
             content: '';
             position: absolute;
@@ -202,7 +195,7 @@
 </head>
 <body>
 
-    <!-- 👑 視認性を改善した上品なくすみピンク背景＋金銀キラキラタイトル -->
+    <!-- 👑 視認性を最優先した上品なくすみピンク背景＋焦げ茶文字タイトル -->
     <h1>✨ 一斉申請マニュアル ✨</h1>
 
     <!-- ────────── STEP 1 ────────── -->
