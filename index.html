@@ -218,7 +218,7 @@
             100% { left: 140%; }
         }
 
-        /* ✅ コピー直後（5秒間）：鮮やかなグリーンに変化 */
+        /* ✅ コピー直後（2秒間）：鮮やかなグリーンに変化 */
         .copy-btn.copied {
             background: #28a745 !important;
             color: #fff !important;
@@ -587,17 +587,17 @@ Many listeners are looking for a central place to connect and support releases t
             document.execCommand("copy");
             document.body.removeChild(tempInput);
             
-            // 1. コピー直後（5秒間）：全面緑色の「コピー済」
+            // 1. コピー直後（2秒間）：全面緑色の「コピー済」
             button.innerText = "コピー済";
             button.classList.add("copied");
             
-            // 2. 10秒経過した後の処理
+            // 2. 2秒経過した後の処理
             setTimeout(function() {
                 // 緑の背景を解除（通常の金銀に戻る）
                 button.classList.remove("copied");
                 // 文字サイズは一切小さくせず、ご指定の「コピー✅」に変更！
                 button.innerText = "コピー✅";
-            }, 5000); 
+            }, 2000); 
         }
     </script>
 
